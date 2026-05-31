@@ -1,0 +1,281 @@
+{
+  "INTEGRATED_STRATEGIES": [
+    {
+      "id": "is2",
+      "name": "팬텀 & 크림슨 솔리테어",
+      "bosses": [
+        {
+          "id": "is2_b1",
+          "name": "루시안",
+          "stage": "5층 기본"
+        },
+        {
+          "id": "is2_b2",
+          "name": "새드락",
+          "stage": "5층 히든"
+        },
+        {
+          "id": "is2_b3",
+          "name": "극단 대변인",
+          "stage": "6층 히든1"
+        },
+        {
+          "id": "is2_b4",
+          "name": "극작가",
+          "stage": "6층 히든2"
+        }
+      ]
+    },
+    {
+      "id": "is3",
+      "name": "미즈키 & 카이룰라 아버",
+      "bosses": [
+        {
+          "id": "is3_b1",
+          "name": "하이모어",
+          "stage": "5층 기본"
+        },
+        {
+          "id": "is3_b2",
+          "name": "마지막 기사",
+          "stage": "5층 히든"
+        },
+        {
+          "id": "is3_b3",
+          "name": "이샤믈라",
+          "stage": "6층 히든1"
+        },
+        {
+          "id": "is3_b4",
+          "name": "이즈믹",
+          "stage": "6층 히든2"
+        }
+      ]
+    },
+    {
+      "id": "is4",
+      "name": "탐험가의 은빛 서리 끝자락",
+      "bosses": [
+        {
+          "id": "is4_b1",
+          "name": "사미의 의지",
+          "stage": "5층 기본"
+        },
+        {
+          "id": "is4_b2",
+          "name": "에이크티르니르",
+          "stage": "5층 히든"
+        },
+        {
+          "id": "is4_b3",
+          "name": "크레이즐리선",
+          "stage": "6층 히든"
+        },
+        {
+          "id": "is4_b4",
+          "name": "카간/루갈",
+          "stage": "7층 히든"
+        }
+      ]
+    },
+    {
+      "id": "is5",
+      "name": "살카즈의 영겁기담",
+      "bosses": [
+        {
+          "id": "is5_b1",
+          "name": "프레몬트",
+          "stage": "5층 기본"
+        },
+        {
+          "id": "is5_b2",
+          "name": "테레시아/테레시스",
+          "stage": "5층 히든"
+        },
+        {
+          "id": "is5_b3",
+          "name": "총기사",
+          "stage": "6층 히든"
+        },
+        {
+          "id": "is5_b4",
+          "name": "콜람",
+          "stage": "6층 히든2"
+        },
+        {
+          "id": "is5_b5",
+          "name": "아미야",
+          "stage": "7층 히든"
+        }
+      ]
+    },
+    {
+      "id": "is6",
+      "name": "쉐이의 기이한 계원",
+      "bosses": [
+        {
+          "id": "is6_b1",
+          "name": "이",
+          "stage": "5층 기본"
+        },
+        {
+          "id": "is6_b2",
+          "name": "쉐이",
+          "stage": "5층 히든"
+        },
+        {
+          "id": "is6_b3",
+          "name": "왕",
+          "stage": "6층 히든"
+        },
+        {
+          "id": "is6_b4",
+          "name": "후소우/구소우",
+          "stage": "6층 히든2"
+        },
+        {
+          "id": "is6_b5",
+          "name": "총웨",
+          "stage": "7층 히든"
+        }
+      ]
+    }
+  ],
+  "OPERATORS": [
+    {
+      "name": "왕",
+      "class": "스페셜리스트",
+      "rarity": 6
+    },
+    {
+      "name": "트라고디아",
+      "class": "서포터",
+      "rarity": 6
+    },
+    {
+      "name": "위셔델",
+      "class": "스나이퍼",
+      "rarity": 6
+    },
+    {
+      "name": "실버애쉬 더 레인프로스트",
+      "class": "뱅가드",
+      "rarity": 6
+    },
+    {
+      "name": "엑시아 더 뉴 커버넌트",
+      "class": "스페셜리스트",
+      "rarity": 6
+    },
+    {
+      "name": "호시구마 더 브리처",
+      "class": "디펜더",
+      "rarity": 6
+    },
+    {
+      "name": "클로저",
+      "class": "뱅가드",
+      "rarity": 6
+    },
+    {
+      "name": "사키코",
+      "class": "가드",
+      "rarity": 6
+    },
+    {
+      "name": "Mon3tr",
+      "class": "메딕",
+      "rarity": 6
+    },
+    {
+      "name": "켈시 에스페란타",
+      "class": "메딕",
+      "rarity": 6
+    },
+    {
+      "name": "슈",
+      "class": "디펜더",
+      "rarity": 6
+    },
+    {
+      "name": "하루카",
+      "class": "서포터",
+      "rarity": 6
+    },
+    {
+      "name": "이네스",
+      "class": "뱅가드",
+      "rarity": 6
+    },
+    {
+      "name": "첸 더 던스트릭",
+      "class": "가드",
+      "rarity": 6
+    },
+    {
+      "name": "레이즈 더 썬더브링어",
+      "class": "가드",
+      "rarity": 6
+    },
+    {
+      "name": "울피아누스",
+      "class": "가드",
+      "rarity": 6
+    },
+    {
+      "name": "무에나",
+      "class": "가드",
+      "rarity": 6
+    },
+    {
+      "name": "위",
+      "class": "디펜더",
+      "rarity": 6
+    },
+    {
+      "name": "에이야퍄들라 더 크비트아스카",
+      "class": "메딕",
+      "rarity": 6
+    },
+    {
+      "name": "로고스",
+      "class": "캐스터",
+      "rarity": 6
+    },
+    {
+      "name": "Ela",
+      "class": "스페셜리스트",
+      "rarity": 6
+    },
+    {
+      "name": "키린 R 야토",
+      "class": "스페셜리스트",
+      "rarity": 6
+    },
+    {
+      "name": "프라마닉스 더 프레리타",
+      "class": "캐스터",
+      "rarity": 6
+    },
+    {
+      "name": "미즈키",
+      "class": "스페셜리스트",
+      "rarity": 6
+    },
+    {
+      "name": "티폰",
+      "class": "스나이퍼",
+      "rarity": 6
+    },
+    {
+      "name": "라이디언",
+      "class": "서포터",
+      "rarity": 6
+    },
+    {
+      "name": "아스카론",
+      "class": "스페셜리스트",
+      "rarity": 6
+    }
+  ]
+}

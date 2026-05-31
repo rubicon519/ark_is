@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arknights IS Selector - 명일방주 통합전략 루트/밴 선택</title>
+  <meta name="description" content="명일방주 통합전략 밴 및 필터 조건 맞춤형 랜덤 매칭 시스템">
+
+  <!-- Tom Select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.3.1/css/tom-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.3.1/js/tom-select.complete.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header Area -->
+    <header>
+      <div class="title-area">
+        <div class="title-logo">IS</div>
+        <div>
+          <h1>ARKNIGHTS IS SELECTOR</h1>
+          <div class="subtitle">
+            명일방주 통합전략 루트와 밴 오퍼레이터를 랜덤으로 선택합니다
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STEP 1: Integrated Strategy Select & Boss Filter -->
+    <div class="grid-2">
+      <div class="section" id="theme-section">
+        <h2 class="section-title">1. 통합전략 테마 선택</h2>
+        <div class="list-group" id="theme-list"></div>
+      </div>
+
+      <div class="section" id="boss-section">
+        <h2 class="section-title">2. 보스</h2>
+        <div class="list-group" id="boss-list"></div>
+      </div>
+    </div>
+
+    <!-- STEP 2: Option Setup -->
+    <div class="grid-2">
+      <!-- 3. 매칭 설정 -->
+      <div class="section">
+        <h2 class="section-title">3. 매칭 설정</h2>
+        <div class="control-row">
+          <span class="control-label">금지 오퍼레이터 수</span>
+          <div class="number-input-wrapper">
+            <button class="num-btn" id="btn-ban-minus">-</button>
+            <span class="num-val" id="ban-count-val">4</span>
+            <button class="num-btn" id="btn-ban-plus">+</button>
+          </div>
+        </div>
+        <div class="control-row">
+          <span class="control-label">제공할 후보 세트 수</span>
+          <div class="number-input-wrapper">
+            <button class="num-btn" id="btn-sets-minus">-</button>
+            <span class="num-val" id="sets-count-val">3</span>
+            <button class="num-btn" id="btn-sets-plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 필수 오퍼레이터 -->
+      <div class="section">
+        <h2 class="section-title">필수 오퍼레이터 (밴 제외)</h2>
+        <div class="op-pool-manager">
+          <select id="essential-select" multiple placeholder="오퍼레이터 검색 후 선택..."></select>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRIGGER BUTTON -->
+    <div class="action-area">
+      <button class="btn-trigger" id="btn-match">매칭 실행 (MATCH)</button>
+      <button class="btn-reset" id="btn-reset">초기화</button>
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div class="result-container" id="results">
+      <div class="result-header">
+        <h3 class="result-title">TACTICAL MATCHING SUCCESSFUL</h3>
+      </div>
+
+      <div class="route-presentation">
+        <div class="route-card">
+          <div class="route-card-title">선택된 통합전략</div>
+          <div class="route-card-content" id="res-theme">미즈키 & 카이룰라 아버</div>
+        </div>
+        <div class="route-card" style="border-left-color: var(--accent-cyan);">
+          <div class="route-card-title">선택된 루트</div>
+          <div class="route-card-content" id="res-boss">???</div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:20px; border-left-color:#ff4a4a;">금지 오퍼레이터(Ban List)</div>
+      <div class="ban-sets-grid" id="res-ban-sets"></div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>

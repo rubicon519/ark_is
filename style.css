@@ -1,0 +1,754 @@
+/* Arknights IS Selector - Modern Tactical Dark Design System */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+
+:root {
+  --bg-primary: #0a0c10;
+  --bg-secondary: rgba(18, 22, 28, 0.7);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent-color: #ff7f00;
+  /* Arknights Orange */
+  --accent-glow: rgba(255, 127, 0, 0.35);
+  --accent-cyan: #00d2ff;
+  --text-primary: #f0f2f5;
+  --text-secondary: #90a0b5;
+  --text-disabled: #4e5b6c;
+  --card-bg: rgba(20, 26, 35, 0.65);
+  --card-blur: 16px;
+  --transition-speed: 0.25s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(at 10% 20%, rgba(255, 127, 0, 0.05) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(0, 210, 255, 0.03) 0px, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  overflow-y: auto;
+}
+
+/* Container & Grid Layout */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  background: var(--bg-secondary);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arknights Tactical Decorative Lines */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 4px;
+  background: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.container::after {
+  content: 'SYSTEM VERSION 1.0.0';
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 10px;
+  color: var(--text-disabled);
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* Header styling */
+header {
+  margin-bottom: 35px;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 25px;
+}
+
+.title-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.title-logo {
+  width: 45px;
+  height: 45px;
+  background: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #000;
+  border-radius: 8px;
+  font-size: 20px;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fff 60%, var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  background: rgba(255, 127, 0, 0.15);
+  color: var(--accent-color);
+  border: 1px solid rgba(255, 127, 0, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Section styling */
+.section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  position: relative;
+  transition: border-color var(--transition-speed);
+}
+
+.section:hover {
+  border-color: rgba(255, 127, 0, 0.2);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 3px solid var(--accent-color);
+  padding-left: 10px;
+  letter-spacing: -0.2px;
+}
+
+/* Flex Grid layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Checkbox and Lists */
+.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  user-select: none;
+  min-height: 22px;
+  color: var(--text-primary);
+  transition: color var(--transition-speed);
+}
+
+.custom-checkbox:hover {
+  color: #fff;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  transition: all var(--transition-speed);
+}
+
+.custom-checkbox:hover input~.checkmark {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 테마 선택 체크박스: 주황색 (선택 = 포함) */
+.custom-checkbox input:checked~.checkmark {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input:checked~.checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+.boss-badge-info {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-left: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* 보스 표 */
+.boss-table-header,
+.boss-table-row {
+  display: grid;
+  grid-template-columns: 1fr 52px 52px;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 2px;
+}
+
+.boss-table-header {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 4px;
+  padding-bottom: 6px;
+}
+
+.boss-table-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+}
+
+.boss-table-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.boss-table-col {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 고정/제외 체크박스 공통 */
+.boss-pin-cb,
+.boss-exc-cb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.boss-pin-cb:hover {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 210, 255, 0.08);
+}
+
+.boss-exc-cb:hover {
+  border-color: #ff4a4a;
+  background: rgba(255, 74, 74, 0.08);
+}
+
+/* 고정 체크 시 → cyan */
+.boss-pin-cb:checked {
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 8px rgba(0, 210, 255, 0.35);
+}
+
+/* 제외 체크 시 → red */
+.boss-exc-cb:checked {
+  background: #ff4a4a;
+  border-color: #ff4a4a;
+  box-shadow: 0 0 8px rgba(255, 74, 74, 0.35);
+}
+
+/* 체크마크 */
+.boss-pin-cb:checked::after,
+.boss-exc-cb:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Control Options (Slider, Numeric Input) */
+.control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.control-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.number-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.num-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed);
+}
+
+.num-btn:hover {
+  background: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
+}
+
+.num-val {
+  font-size: 16px;
+  font-weight: 800;
+  width: 25px;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+/* Core Roulette & Operator pool Customization */
+.op-pool-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Action button for Roulette */
+.action-area {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  margin: 35px 0;
+}
+
+.btn-trigger {
+  background: var(--accent-color);
+  border: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 15px 45px;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-speed);
+  box-shadow: 0 4px 20px var(--accent-glow);
+  text-transform: uppercase;
+}
+
+.btn-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(255, 127, 0, 0.55);
+}
+
+.btn-trigger:active {
+  transform: translateY(0);
+}
+
+.btn-reset {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 0;
+  width: calc((45px * 2 + 1em) / 2);
+  /* btn-trigger 가로의 약 1/2 */
+  min-width: 80px;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: all var(--transition-speed);
+}
+
+.btn-reset:hover {
+  background: rgba(255, 74, 74, 0.1);
+  border-color: rgba(255, 74, 74, 0.4);
+  color: #ff4a4a;
+  transform: translateY(-2px);
+}
+
+.btn-reset:active {
+  transform: translateY(0);
+}
+
+/* MATCHING RESULT SCREEN */
+.result-container {
+  display: none;
+  background: linear-gradient(135deg, rgba(255, 127, 0, 0.05) 0%, rgba(0, 210, 255, 0.02) 100%), rgba(22, 28, 38, 0.85);
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 25px rgba(255, 127, 0, 0.15);
+  border-radius: 14px;
+  padding: 30px;
+  margin-top: 30px;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result-title {
+  color: var(--accent-color);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.route-presentation {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.route-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid var(--accent-color);
+  padding: 15px 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.route-card-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.route-card-content {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Ban set grids */
+.ban-sets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.ban-set-card {
+  background: rgba(255, 74, 74, 0.05);
+  border: 1px solid rgba(255, 74, 74, 0.15);
+  border-radius: 8px;
+  padding: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+.ban-set-card:hover {
+  border-color: rgba(255, 74, 74, 0.35);
+  background: rgba(255, 74, 74, 0.08);
+}
+
+/* -------------------------------------------------------
+   밴 세트 카드 선택 상태
+------------------------------------------------------- */
+.ban-set-card.selected {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 210, 255, 0.07);
+  box-shadow: 0 0 16px rgba(0, 210, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.ban-set-card.dimmed {
+  opacity: 0.3;
+  filter: grayscale(40%);
+}
+
+.ban-set-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #ff4a4a;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* selected 상태일 때 SET 타이틀도 cyan 으로 변경 */
+.ban-set-card.selected .ban-set-title {
+  color: var(--accent-cyan);
+}
+
+.ban-operator-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ban-operator-item {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.op-class-tag {
+  font-size: 10px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* 스크린샷 버튼 */
+.btn-screenshot {
+  display: none;
+  /* updateScreenshotBtn()이 제어 */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 24px;
+  padding: 13px 0;
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  border-radius: 10px;
+  color: var(--accent-cyan);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: all var(--transition-speed);
+}
+
+.btn-screenshot:hover {
+  background: rgba(0, 210, 255, 0.15);
+  border-color: rgba(0, 210, 255, 0.6);
+  box-shadow: 0 0 16px rgba(0, 210, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-screenshot:active {
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------
+   Tom Select 커스텀 테마 (Arknights Dark)
+------------------------------------------------------- */
+.ts-wrapper {
+  width: 100%;
+}
+
+.ts-control {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  padding: 8px 10px !important;
+  min-height: 42px;
+  box-shadow: none !important;
+  cursor: text;
+}
+
+.ts-control:focus-within {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 2px rgba(255, 127, 0, 0.15) !important;
+}
+
+.ts-control input {
+  color: #fff !important;
+  font-family: 'Outfit', 'Noto Sans KR', sans-serif !important;
+  font-size: 13px !important;
+}
+
+.ts-control input::placeholder {
+  color: var(--text-disabled) !important;
+}
+
+/* 선택된 아이템 칩 */
+.ts-control .item {
+  background: rgba(0, 210, 255, 0.15) !important;
+  border: 1px solid rgba(0, 210, 255, 0.4) !important;
+  color: #cceeff !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 2px 8px !important;
+}
+
+/* 제거 버튼 */
+.ts-control .item .remove {
+  color: rgba(0, 210, 255, 0.6) !important;
+  border-left: 1px solid rgba(0, 210, 255, 0.3) !important;
+  margin-left: 4px !important;
+  padding-left: 4px !important;
+}
+
+.ts-control .item .remove:hover {
+  color: #ff4a4a !important;
+  background: transparent !important;
+}
+
+/* 드롭다운 */
+.ts-dropdown {
+  background: #12161c !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  margin-top: 4px !important;
+}
+
+.ts-dropdown .ts-dropdown-content {
+  padding: 4px !important;
+}
+
+.ts-dropdown .option {
+  color: var(--text-primary) !important;
+  border-radius: 6px !important;
+  padding: 7px 10px !important;
+  font-size: 13px !important;
+  cursor: pointer;
+}
+
+.ts-dropdown .option:hover,
+.ts-dropdown .option.active {
+  background: rgba(255, 127, 0, 0.12) !important;
+  color: #fff !important;
+}
+
+.ts-dropdown .option.selected {
+  background: rgba(0, 210, 255, 0.1) !important;
+  color: var(--accent-cyan) !important;
+}
+
+/* 커스텀 옵션 레이아웃 (이름 + 직군 태그) */
+.ts-custom-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* 검색 입력 하이라이트 */
+.ts-dropdown .highlight {
+  background: rgba(255, 127, 0, 0.25) !important;
+  border-radius: 3px;
+}
