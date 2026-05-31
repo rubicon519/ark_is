@@ -85,7 +85,7 @@ function renderThemes() {
     label.innerHTML = `
       <input type="checkbox" data-theme-id="${theme.id}" ${isSelected ? 'checked' : ''}>
       <span class="checkmark"></span>
-      <img src="./thumbnail/${theme.id}.png" style="height:110px; ">
+      <img src="./${theme.id}.png" style="height:110px; ">
     `;
     const checkbox = label.querySelector('input');
     checkbox.addEventListener('change', (e) => {
